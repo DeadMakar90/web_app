@@ -16,7 +16,7 @@ if(isset($_SESSION['username'])){  //если переменная $_SESSION н�
 	$usr=$_SESSION['username'];
 	header('Location: user_form.php'); //перебрасываем на следующуюю страницу
 		if ($usr == 'admin'){
-			header('Location: admins_form.php');
+			header('Location: admins_form.php'); //если юзер админ, то перебрасываем на админку.
 		}
 }
 
