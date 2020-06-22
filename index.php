@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<form class="form-signin" method="POST" action="login.php">
-			<h2>Вход</h2>
+            <h1 class="h3 mb-3 font-weight-normal">Вход</h1>
 			<input type="text" name="username" class="form-control" placeholder="Имя пользователя">
 			<input type="password" name="password"class="form-control" placeholder="пароль">
 			<button type="submit" class="btn btn btn-success btn-lg btn-block">Вход</button>
