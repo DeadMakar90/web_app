@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="signin.css">
 	<title>Смена пароля</title>
 </head>
 <body>
@@ -13,6 +13,7 @@
 				<input type="text" name="username" placeholder="Имя пользователя" class="form-control"><br>
 				<input type="password" name="new_pass" placeholder="Новый пароль" class="form-control"><br>
 				<button type="submit" class='btn btn-lg btn btn-info btn-block'>Выполнить</button>
+                <a href="admins_form.php" class='btn btn-lg btn btn-info btn-block' id = 'return'>Назад</a>
 			</form>
 		</div>
 		<?php
