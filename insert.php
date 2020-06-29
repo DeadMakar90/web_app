@@ -13,8 +13,8 @@
                $login = $_POST['login'];
                $pass = $_POST['pass'];
                $access = 0;
-               echo $login;
-               echo  $pass;
+               echo '$login';
+               echo '$pass';
                echo $access;
            }
 
