@@ -40,7 +40,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Список пользователей</a>
-                    <a class="dropdown-item" href="#">Добавление пользователей</a>
+                    <a class="dropdown-item" href="user_insert.php">Добавление пользователей</a>
                     <a class="dropdown-item" href="password_update.php">Смена пароля</a>
                 </div>
             </li>
