@@ -2,7 +2,7 @@
 require('connect.php'); //пдключаемся к базе
 $usr = $_POST['username']; //считываение парамера login
 $pass = $_POST['password']; //считываение парамера passwd
-$sql = "SELECT * FROM `USERS` WHERE `LOGIN` = '$usr' AND `PASSWD` = '$pass' AND `FLAG` IS NOT NULL"; //Запрос к базе данных
+$sql = "SELECT * FROM `USERS` WHERE `LOGIN` = '$usr' AND `PASSWD` = '$pass' AND `FLAG` = 'on'"; //Запрос к базе данных
 $result=mysqli_query($conn,$sql); //запись результата запроса
 $count=mysqli_num_rows($result); //подсчет кол-ва записей возвращенных запросом
 if ($count!=0) {
