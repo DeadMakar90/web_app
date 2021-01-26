@@ -1,0 +1,46 @@
+---
+- name: install and start apache2
+  hosts: all
+  become: yes
+  
+  vars:
+   packages:
+            - apache2
+            - htop
+            - mc
+            - vim
+            - tree
+            - git
+            - apt-transport-https
+            - ca-certificates  
+            - mysql-server
+            - python-mysqldb
+            - python3-mysqldb
+
+  tasks:
+  - name: install apache2
+    apt:
+     pkg: "{{packages}}"
+     state: present
+
+  - name: git_clone
+    git: 
+      repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.com/DeadMakar90/web_app.git
+      dest: /home/vagrant/web_app
+      clone: yes
+
+  template:
+  - name: virtual host conf
+    src: "apache2.conf.j2"
+    dest: "/etc/apache2/sites-available/"
+
+  ansible.builtin.copy:
+  - name: deploy 
+    src: /home/vagrant/web_app
+    dest: /var/www/
+
+  service:
+  - name: apache2 resrtart 
+    name: apache2
+    state: restarted
+

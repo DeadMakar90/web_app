@@ -1,0 +1,49 @@
+---
+- name: install and start apache2
+  hosts: all
+  become: yes
+  
+  vars:
+   packages:
+            - apache2
+            - htop
+            - mc
+            - vim
+            - tree
+            - git
+            - apt-transport-https
+            - ca-certificates  
+            - mysql-server
+            - python3-mysqldb
+            - php-mysql 
+            - php-curl
+            - php-json
+            - php-cgi
+            - php
+            - libapache2-mod-php  
+
+  tasks:
+  - name: install apache2
+    apt:
+     pkg: "{{packages}}"
+     state: present
+
+  - name: git_clone
+    git: 
+      repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.com/DeadMakar90/web_app.git
+      dest: /home/vagrant/web_app
+      clone: yes
+
+  - name: copy web_app in /var/www/
+    command: cp /home/vagrant/web_app -r /var/www
+
+  - template:
+      src: apache2.conf.j2
+      dest: /etc/apache2/sites-available/000-default.conf
+
+  - name: restart apache2
+    service:
+      name: apache2
+      state: restarted
+
+
