@@ -21,7 +21,7 @@
         <label class="form-check-label" for="exampleCheck1">Разрешить доступ?</label>
     </div>
     <button type="submit" class="btn btn-primary">Сохранить</button>
-    <a href="admins_form.php" class="btn btn-primary' id = 'return'>Назад</a>
+    <a href="admins_form.php" class="btn btn-primary">Назад</a>
 </form>
         <?php
         if (!empty($_POST['login']) && !empty($_POST['pass'])) {
