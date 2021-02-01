@@ -32,6 +32,6 @@ echo "</table>";
 echo "</div>";
 mysqli_close();
 ?>
-<a href="values_form.php" class="btn btn-lg btn btn-info btn-block'" id="return">Назад</a>
+<a href="admins_form.php" class="btn btn-lg btn btn-info btn-block'" id="return">Назад</a>
 </body>
 </html>
