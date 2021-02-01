@@ -22,3 +22,12 @@
         state: import
         name: webapp
         target: /home/vagrant/web_app/webapp.sql
+
+    - template:
+        src: mysql.conf.j2
+        dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+
+    - name: restart mysql
+       service:
+       name: mysql
+       state: restarted
