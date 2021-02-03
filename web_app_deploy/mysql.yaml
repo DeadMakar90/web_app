@@ -28,6 +28,6 @@
         dest: /etc/mysql/mysql.conf.d/mysqld.cnf
 
     - name: restart mysql
-       service:
+      service:
        name: mysql
        state: restarted
