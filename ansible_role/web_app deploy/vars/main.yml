@@ -1,0 +1,18 @@
+---
+  packages:
+            - apache2
+            - htop
+            - mc
+            - vim
+            - tree
+            - git
+            - apt-transport-https
+            - ca-certificates  
+            - mysql-server
+            - python3-mysqldb
+            - php-mysql 
+            - php-curl
+            - php-json
+            - php-cgi
+            - php
+            - libapache2-mod-php  

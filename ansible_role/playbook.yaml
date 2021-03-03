@@ -1,0 +1,7 @@
+---
+- name: web_app deploy
+  hosts: all
+  become: true
+
+  roles:
+    - web_app deploy

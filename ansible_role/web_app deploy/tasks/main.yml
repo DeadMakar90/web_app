@@ -1,0 +1,50 @@
+---
+  - name: install apache2
+    apt:
+     pkg: "{{packages}}"
+     state: present
+
+  - name: git_clone
+    git: 
+      repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.com/DeadMakar90/web_app.git
+      dest: /home/$USER/web_app
+      clone: yes
+
+  - name: copy web_app in /var/www/
+    command: cp /home/$USER/web_app -r /var/www
+
+  - template:
+      src: apache2.conf.j2
+      dest: /etc/apache2/sites-available/000-default.conf
+
+  - name: restart apache2
+    service:
+      name: apache2
+      state: restarted
+  - name: create user sysdba
+    mysql_user:
+      name: sysdba
+      host: '%'
+      password: 123456
+      priv: '*.*:ALL'
+      state: present
+
+  - name: create db web_app
+    mysql_db:
+      name: webapp
+      state: present
+
+  - name: webapp dump_restore
+    mysql_db:
+      state: import
+      name: webapp
+      target: /home/$USER/web_app/webapp.sql
+
+  - template:
+      src: mysql.conf.j2
+      dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+
+  - name: restart mysql
+    service:
+      name: mysql
+      state: restarted
