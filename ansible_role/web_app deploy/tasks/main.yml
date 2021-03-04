@@ -1,5 +1,9 @@
 ---
-  - name: install apache2
+  - name: set timezone to Europe/Moscow
+    timezone:
+      name: Europe/Moscow
+      
+  - name: install LAMP
     apt:
      pkg: "{{packages}}"
      state: present
