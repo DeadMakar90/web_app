@@ -3,8 +3,11 @@
 
 ## Установка и настройка приложения для сбора данных с датчиков Adrduino.
  Устанавливаем часовой пояс Europe/Moscow
+ 
  Устанавливается стек LAMP
+ 
  Скачивается проэкт
+ 
  Запуск роли: 
  ```
  ansible-playbook playbook.yaml -e "githubuser=deadmakar90" -e "githubpassword=VfrfHtyrj9901_1"
