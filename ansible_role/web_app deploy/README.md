@@ -8,6 +8,7 @@
  Запуск роли: 
  ```
  ansible-playbook playbook.yaml -e "githubuser=deadmakar90" -e "githubpassword=VfrfHtyrj9901_1"
+ ```
 
 ## ПыСы:
    Я знаю, что хранить пароли так это плохо и руки мне надо вырвать.
